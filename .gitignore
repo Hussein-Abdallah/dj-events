@@ -1,0 +1,41 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/dj-events-frontend/node_modules
+/dj-events-frontend/.pnp
+/dj-events-frontend/.pnp.js
+
+# testing
+/dj-events-frontend/coverage
+
+# next.js
+/dj-events-frontend/.next/
+/dj-events-frontend/out/
+
+# production
+/dj-events-frontend/build
+
+# misc
+/dj-events-frontend/.DS_Store
+/dj-events-frontend/*.pem
+
+# debug
+/dj-events-frontend/npm-debug.log*
+/dj-events-frontend/yarn-debug.log*
+/dj-events-frontend/yarn-error.log*
+
+# local env files
+/dj-events-frontend/.env.local
+/dj-events-frontend/.env.development.local
+/dj-events-frontend/.env.test.local
+/dj-events-frontend/.env.production.local
+/dj-events-frontend/.env
+
+# Logs
+/dj-events-frontend/logs
+/dj-events-frontend/*.log
+
+# vercel
+/dj-events-frontend/.vercel
+
+.vscode
