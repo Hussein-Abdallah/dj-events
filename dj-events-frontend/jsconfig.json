@@ -4,7 +4,8 @@
     "paths": {
       // Shorten path: [Location]
       "@/components/*": ["components/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/config/*": ["config/*"]
     }
   }
 }
