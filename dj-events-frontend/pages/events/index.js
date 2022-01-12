@@ -1,6 +1,7 @@
 import EventItem from '@/components/EventItem';
 import Layout from '@/components/Layout';
-import { API_URL } from '@/config/index';
+import { gql } from '@apollo/client';
+import client from 'apollo-client';
 
 export default function EventsPage({ events }) {
   return (
@@ -15,11 +16,33 @@ export default function EventsPage({ events }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/events`);
-  const events = await res.json();
+  const { data } = await client.query({
+    query: gql`
+      query SHOW_ALL_EVENTS {
+        events(sort: ["date:ASC"]) {
+          data {
+            id
+            attributes {
+              name
+              slug
+              date
+              time
+              image {
+                data {
+                  attributes {
+                    formats
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
 
   return {
-    props: { events },
+    props: { events: data.events.data },
     revalidate: 1,
   };
 }
